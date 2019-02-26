@@ -1,0 +1,216 @@
+Date 1
+ 
+class Program
+    {
+        public static void Main(string[] args)
+        {
+            DateTime dateTime = DateTime.ParseExact(s,"YYYY-MM-DD HH:mm:ss)", null);
+            Console.WriteLine(dateTime.ToString("MM/dd/yyyy"));
+            Console.ReadKey();
+    }
+}
+
+*******************************************************************************************
+Date Api 2  
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter String in this format(YYYY-MM-DD HH:mm:ss)");
+            string str = Console.ReadLine();
+      
+            DateTime dateTime = DateTime.ParseExact(str, "yyyy-MM-dd H:mm:ss", null);
+            Console.WriteLine(dateTime.ToString("dd/MM/yyyy, H:mm:ss"));
+            Console.ReadKey();
+        }
+    }
+*************************************************************************************************
+Date api 3
+Day of Year
+class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = Console.ReadLine();
+
+            DateTime dateTime = DateTime.ParseExact(str, "yyyy-MM-dd", null);
+            Console.WriteLine("Day of year : "+dateTime.DayOfYear);
+            Console.ReadKey();
+        }
+    }
+******************************************************************************************
+Date api 4
+day
+  class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = Console.ReadLine();
+
+            DateTime dateTime = DateTime.ParseExact(str, "yyyy-MM-dd", null);
+            Console.WriteLine(dateTime.ToString("dddd"));
+            Console.ReadKey();
+        }
+    }
+
+******************************************************************************************
+
+Date api 5
+year 
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string str = Console.ReadLine();
+
+            DateTime dateTime = DateTime.ParseExact(str, "yyyy-MM-dd", null);
+            Console.WriteLine(dateTime.AddYears(1).ToString("yyyy-MM-dd"));
+            Console.WriteLine(dateTime.AddYears(-1).ToString("yyyy-MM-dd"));
+            Console.ReadKey();
+        }
+    }
+
+
+******************************************************************************************
+Date api 6
+				Day Of Month 
+Sample Input 1: 
+2015 
+3 
+Sample Output 1: 
+Sunday 
+Tuesday 
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the year");
+            int year=Convert.ToInt32(Console.ReadLine());
+            int month = Convert.ToInt32(Console.ReadLine());
+            DateTime dateTime = new DateTime(year,month,1);
+            Console.WriteLine(dateTime.DayOfWeek);
+            DateTime d2 = dateTime.AddMonths(1).AddDays(-1);
+            Console.WriteLine(d2.DayOfWeek);
+            Console.ReadKey();
+        }
+    }
+
+******************************************************************************************
+
+date api 7
+				Start and End day of the year 
+
+
+Sample Input And Output:
+Enter the year
+2015
+Start Day of the given year is Thursday 
+End Day of the given year is Thursday 
+
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the year");
+            int year=Convert.ToInt32(Console.ReadLine());
+            //int month = Convert.ToInt32(Console.ReadLine());
+            DateTime dateTime = new DateTime(year,01,1);
+            Console.WriteLine("Start Day of the given year is "+dateTime.DayOfWeek);
+            DateTime d2 = dateTime.AddYears(1).AddDays(-1);
+            Console.WriteLine("End Day of the given year is "+d2.DayOfWeek);
+            Console.ReadKey();
+        }
+    }
+
+
+
+**************************************************************************************
+Sample Input :
+
+ 2015-05-15
+2016-09-16
+Sample Output :
+
+ Difference between 2015-05-15 and 2016-09-16: 1 Years and 4 Months
+
+
+class Program
+    {
+        static void Main(string[] args)
+        {
+            string a = Console.ReadLine();
+            DateTime dt = DateTime.ParseExact(a, "yyyy-MM-dd", null);
+            string b = Console.ReadLine();
+            DateTime dt1 = DateTime.ParseExact(b, "yyyy-MM-dd", null);
+
+            TimeSpan ts = (dt1 - dt);
+            int y = ts.Days / 365;
+            int m = (ts.Days % 365) / 31;
+
+            Console.WriteLine("Difference between " + a + " and " + b + ": " + y + " Years and " + m + " Months");
+  Console.ReadKey();
+        }
+    }
+******************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+******************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
