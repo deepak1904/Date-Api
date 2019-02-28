@@ -126,3 +126,39 @@ class Program
             }
             
         }
+****************************************************************************************
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string dd,mm,yyyy;
+            string a = Console.ReadLine();
+            if (a.Contains('-'))
+            {
+                string[] s1 = a.Split(new char[] { '-' });
+                dd = s1[0];
+                mm = s1[1];
+                yyyy = s1[2];
+                int s = Convert.ToInt32(dd);
+                int b = Convert.ToInt32(mm);
+                if (s < 32 && b < 13 && s > 0 && b > 0)
+                    Console.WriteLine("Invalid");
+            
+            else
+                Console.WriteLine("Valid");
+        }
+        else
+           Console.WriteLine("Invalid");
+        }
+    }
