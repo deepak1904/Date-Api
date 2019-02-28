@@ -1,0 +1,128 @@
+calculate age
+string b = Console.ReadLine();
+            DateTime dt1 = DateTime.ParseExact(b, "yyyy-MM-dd", null);
+
+            TimeSpan ts = (dt1 - dt);
+            int y = ts.Days / 365;
+            int m = (ts.Days % 365) / 31;
+            int d = (ts.Days % 365) % 31;
+            Console.WriteLine(y + " Years " + m + " months " + d + " days");
+
+
+
+****************************************************************************************
+
+
+10 days before and after
+
+ class Program
+    {
+        static void Main(string[] args)
+        {
+            string a = Console.ReadLine();
+            DateTime dt = DateTime.ParseExact(a, "yyyy-MM-dd", null);
+            DateTime d = dt.AddDays(-10);
+            Console.WriteLine(d.ToString("yyyy-MM-dd"));
+            Console.WriteLine(d.DayOfWeek);
+            DateTime d1 = dt.AddDays(10);
+            Console.WriteLine(d1.ToString("yyyy-MM-dd"));
+            Console.WriteLine(d1.DayOfWeek);
+
+
+
+****************************************************************************************
+
+Display Time
+
+ class Program
+    {
+        static void Main(string[] args)
+        {
+            string a = Console.ReadLine();
+            DateTime dt = DateTime.ParseExact(a, "HH:mm:ss", null);
+            DateTime d = dt.AddHours(2);
+            Console.WriteLine(d.ToString("HH:mm:ss"));
+
+            Console.ReadKey();
+}
+}
+
+
+****************************************************************************************
+			Display Day of the Year
+class Program
+{
+    static void Main(string[] args)
+    {
+        int a = Convert.ToInt32(Console.ReadLine());
+
+        int b = Convert.ToInt32(Console.ReadLine());
+        DateTime dt = new DateTime(a, 01, 01);
+        DateTime d1 = dt.AddDays(b - 1);
+        string u = (d1.ToString("yyyy-MM-dd"));
+        Console.WriteLine(b + "th day of " + a + " : " + u);
+        Console.ReadKey();
+    }
+}
+****************************************************************************************
+				Date before months
+  class Program
+    {
+        static void Main(string[] args)
+        {
+            string a = Console.ReadLine();
+            DateTime dt = DateTime.ParseExact(a, "yyyy-MM-dd", null);//YYYY-MM-DD 
+            DateTime d1 = dt.AddMonths(-20);
+            string o = d1.ToString("yyyy-MM-dd");
+            Console.WriteLine("20 months before " + a + " will be " + o);
+        }
+    }
+
+
+
+****************************************************************************************
+  			 Leap Year
+class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the year");
+            int a = Convert.ToInt32(Console.ReadLine());
+            DateTime dt = new DateTime(a, 01, 01);
+            if ((a % 4 == 0 && a % 100 != 0) || (a % 400 == 0))
+            {
+                Console.WriteLine("{0} is a leap year", a);
+            }
+            else
+            {
+                Console.WriteLine("{0} is not a leap year", a);
+            }
+            Console.ReadKey();
+        }
+    }
+
+
+****************************************************************************************
+				Number Of Sundays
+class Program
+    {
+        static void Main(string[] args)
+        {
+          string a = Console.ReadLine();
+            string b = Console.ReadLine();
+          
+           DateTime dt = DateTime.ParseExact(a,"yyyy-MM-d", null);
+            DateTime dt1 = DateTime.ParseExact(b, "yyyy-MM-d", null);//YYYY-MM-DD 
+                int yu=0;
+          for (DateTime i=dt; i <= dt1; i=i.AddDays(1))
+              {
+            if (i.DayOfWeek== DayOfWeek.Sunday)
+            {
+                yu++;
+            } 
+          }
+           Console.WriteLine(yu);
+           Console.ReadKey();
+            }
+            
+        }
